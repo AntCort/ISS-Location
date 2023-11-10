@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4c0a03144ff3f970a657ea577085fd75 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4c0a03144ff3f970a657ea577085fd75" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4c0a03144ff3f970a657ea577085fd75 = L.map(
+                "map_4c0a03144ff3f970a657ea577085fd75",
+                {
+                    center: [37.8245, -8.3965],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_97391db9cc7ce64d930577df74c2a83d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+                tile_layer_97391db9cc7ce64d930577df74c2a83d.addTo(map_4c0a03144ff3f970a657ea577085fd75);
+    
+            var marker_feae9bf9162c6bbba3b3f27a0693cd65 = L.marker(
+                [37.8245, -8.3965],
+                {}
+            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+        
+    
+            var icon_88c5f86cb47aacead8cbbbcaf5206341 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_feae9bf9162c6bbba3b3f27a0693cd65.setIcon(icon_88c5f86cb47aacead8cbbbcaf5206341);
+        
+    
+        var popup_15cf71559df79132db08eeca02105e9d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c42b0b33bf0b360b479ffea718f9975 = $(`<div id="html_6c42b0b33bf0b360b479ffea718f9975" style="width: 100.0%; height: 100.0%;">ISS Station Location (Latitude: 37.8245, Longitude:-8.3965)</div>`)[0];
+                popup_15cf71559df79132db08eeca02105e9d.setContent(html_6c42b0b33bf0b360b479ffea718f9975);
+            
+        
+
+        marker_feae9bf9162c6bbba3b3f27a0693cd65.bindPopup(popup_15cf71559df79132db08eeca02105e9d)
+        ;
+
+        
+    
+    
+            marker_feae9bf9162c6bbba3b3f27a0693cd65.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca553380e01526146ce71b0eb119c98f = L.marker(
+                [33.77005, -118.193741],
+                {}
+            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+        
+    
+            var icon_8669679950a8abe6aef038d308fceedb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ca553380e01526146ce71b0eb119c98f.setIcon(icon_8669679950a8abe6aef038d308fceedb);
+        
+    
+        var popup_330d7237135d47b34394697f063d7760 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d22ef748be9ea61e9e74a64bac7bf0f1 = $(`<div id="html_d22ef748be9ea61e9e74a64bac7bf0f1" style="width: 100.0%; height: 100.0%;">Your Location (Latitude: 33.77005, Longitude:-118.193741)</div>`)[0];
+                popup_330d7237135d47b34394697f063d7760.setContent(html_d22ef748be9ea61e9e74a64bac7bf0f1);
+            
+        
+
+        marker_ca553380e01526146ce71b0eb119c98f.bindPopup(popup_330d7237135d47b34394697f063d7760)
+        ;
+
+        
+    
+    
+            marker_ca553380e01526146ce71b0eb119c98f.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_33c3bf7a976485678fc2748c8b9222d3 = L.polyline(
+                [[37.8245, -8.3965], [33.77005, -118.193741]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+        
+</script>
+</html>
