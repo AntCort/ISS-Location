@@ -1,5 +1,5 @@
-import requests
 import folium
+import requests
 import webbrowser
 
 
@@ -10,7 +10,7 @@ def get_iss_position():
     data = req.json()
     iss_latitude = float(data["iss_position"]["latitude"])
     iss_longitude = float(data["iss_position"]["longitude"])
-    return (iss_latitude, iss_longitude)
+    return iss_latitude, iss_longitude
 
 
 # Function created to prompt the user for the Longitude and
@@ -34,7 +34,14 @@ def get_user_position():
         except ValueError:
             print("Invalid input. Please enter a valid numerical value for longitude.")
     print("\n")
-    return (user_latitude, user_longitude)
+    return user_latitude, user_longitude
+
+
+# Place a midpoint between user's position and the ISS' hover position
+def find_mid_point(x1, y1, x2, y2):
+    x = round(((x1 + x2) / 2), 6)
+    y = round(((y1 + y2) / 2), 6)
+    return x, y
 
 
 # 'main' function created
@@ -42,13 +49,24 @@ def main():
     # Creating variable to contain the user's and the iss' position
     user_position = user_latitude, user_longitude = get_user_position()
     iss_position = iss_latitude, iss_longitude = get_iss_position()
+    mid_point_position = find_mid_point(
+        user_latitude, user_longitude, iss_latitude, iss_longitude
+    )
 
     print(
-        f"The ISS is currently located over Latitude: {iss_latitude} and Longitude: {iss_longitude}"
+        f"The ISS is currently located over Latitude: {iss_latitude} and Longitude: {iss_longitude}\n"
+    )
+
+    print(
+        f"Your position is: Latitude: {user_latitude} and Longitude: {user_longitude}\n"
+    )
+
+    print(
+        f"The midpoint between the ISS's hover position and your position is: {mid_point_position}"
     )
 
     # Creating the map
-    m = folium.Map(location=(iss_position), control_scale=False, zoom_start=4)
+    m = folium.Map(location=(mid_point_position), control_scale=False, zoom_start=3)
 
     # Adding the ISS' position marker to the map
     folium.Marker(
@@ -66,9 +84,19 @@ def main():
         icon=folium.Icon(color="blue"),
     ).add_to(m)
 
-    # Creating a line between both positions
+    # Creates the marker between the two points
+    folium.Marker(
+        location=mid_point_position,
+        tooltip="Click me!",
+        popup=f"{mid_point_position} is the midpoint between your position and the hover position of the ISS.",
+        icon=folium.Icon(color="purple"),
+    ).add_to(m)
+
+    # Creating a line between all 3 positions
     folium.PolyLine(
-        locations=((iss_position), (user_position)), color="green", weight=2
+        locations=((user_position), (mid_point_position), (iss_position)),
+        color="green",
+        weight=5,
     ).add_to(m)
 
     # Html file needs to be created and also will be opened once
