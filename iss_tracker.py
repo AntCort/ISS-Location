@@ -2,6 +2,8 @@ import folium
 import requests
 import webbrowser
 
+from geopy import distance
+
 
 # Function to get ISS position utilizing the 'ISS Current Location' API
 def get_iss_position():
@@ -49,10 +51,16 @@ def main():
     # Creating variable to contain the user's and the iss' position
     user_position = user_latitude, user_longitude = get_user_position()
     iss_position = iss_latitude, iss_longitude = get_iss_position()
+
+    # Calculation the midpoint and the distance between the two in KM
     mid_point_position = find_mid_point(
         user_latitude, user_longitude, iss_latitude, iss_longitude
     )
+    iss_user_distance_kilometer = round(
+        (distance.distance(user_position, iss_position).km), 2
+    )
 
+    # Printing all of the information in the variables above
     print(
         f"The ISS is currently located over Latitude: {iss_latitude} and Longitude: {iss_longitude}\n"
     )
@@ -62,9 +70,12 @@ def main():
     )
 
     print(
-        f"The midpoint between the ISS's hover position and your position is: {mid_point_position}"
+        f"The midpoint between the ISS's hover position and your position is: {mid_point_position}\n"
     )
 
+    print(
+        f"The distance between you and the ISS's hover position is {iss_user_distance_kilometer} KM."
+    )
     # Creating the map
     m = folium.Map(location=(mid_point_position), control_scale=False, zoom_start=3)
 
@@ -96,7 +107,8 @@ def main():
     folium.PolyLine(
         locations=((user_position), (mid_point_position), (iss_position)),
         color="green",
-        weight=5,
+        weight=6,
+        popup=f"The distance between the ISS and your position is {iss_user_distance_kilometer} KM.",
     ).add_to(m)
 
     # Html file needs to be created and also will be opened once
