@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_4c0a03144ff3f970a657ea577085fd75 {
+                #map_f5dbc81dd857013aecd62fbe8ccde8e0 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,18 +39,18 @@
 <body>
     
     
-            <div class="folium-map" id="map_4c0a03144ff3f970a657ea577085fd75" ></div>
+            <div class="folium-map" id="map_f5dbc81dd857013aecd62fbe8ccde8e0" ></div>
         
 </body>
 <script>
     
     
-            var map_4c0a03144ff3f970a657ea577085fd75 = L.map(
-                "map_4c0a03144ff3f970a657ea577085fd75",
+            var map_f5dbc81dd857013aecd62fbe8ccde8e0 = L.map(
+                "map_f5dbc81dd857013aecd62fbe8ccde8e0",
                 {
-                    center: [37.8245, -8.3965],
+                    center: [6.17625, 10.17585],
                     crs: L.CRS.EPSG3857,
-                    zoom: 4,
+                    zoom: 3,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -60,42 +60,43 @@
 
         
     
-            var tile_layer_97391db9cc7ce64d930577df74c2a83d = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            var tile_layer_a4c863b6534ee872ed010318bf296c72 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-                tile_layer_97391db9cc7ce64d930577df74c2a83d.addTo(map_4c0a03144ff3f970a657ea577085fd75);
-    
-            var marker_feae9bf9162c6bbba3b3f27a0693cd65 = L.marker(
-                [37.8245, -8.3965],
-                {}
-            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+            tile_layer_a4c863b6534ee872ed010318bf296c72.addTo(map_f5dbc81dd857013aecd62fbe8ccde8e0);
         
     
-            var icon_88c5f86cb47aacead8cbbbcaf5206341 = L.AwesomeMarkers.icon(
+            var marker_88aa36c632a7d8f865b571a810bacba5 = L.marker(
+                [-32.6475, -24.6483],
+                {}
+            ).addTo(map_f5dbc81dd857013aecd62fbe8ccde8e0);
+        
+    
+            var icon_a2885d2444a595a2498349de2d922c21 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_feae9bf9162c6bbba3b3f27a0693cd65.setIcon(icon_88c5f86cb47aacead8cbbbcaf5206341);
+            marker_88aa36c632a7d8f865b571a810bacba5.setIcon(icon_a2885d2444a595a2498349de2d922c21);
         
     
-        var popup_15cf71559df79132db08eeca02105e9d = L.popup({"maxWidth": "100%"});
+        var popup_038ed0748c66793fbf69ac0f3fb22216 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_6c42b0b33bf0b360b479ffea718f9975 = $(`<div id="html_6c42b0b33bf0b360b479ffea718f9975" style="width: 100.0%; height: 100.0%;">ISS Station Location (Latitude: 37.8245, Longitude:-8.3965)</div>`)[0];
-                popup_15cf71559df79132db08eeca02105e9d.setContent(html_6c42b0b33bf0b360b479ffea718f9975);
+                var html_29ea2019985cc49ca461e91f64b896f2 = $(`<div id="html_29ea2019985cc49ca461e91f64b896f2" style="width: 100.0%; height: 100.0%;">ISS Station Location (Latitude: -32.6475, Longitude:-24.6483)</div>`)[0];
+                popup_038ed0748c66793fbf69ac0f3fb22216.setContent(html_29ea2019985cc49ca461e91f64b896f2);
             
         
 
-        marker_feae9bf9162c6bbba3b3f27a0693cd65.bindPopup(popup_15cf71559df79132db08eeca02105e9d)
+        marker_88aa36c632a7d8f865b571a810bacba5.bindPopup(popup_038ed0748c66793fbf69ac0f3fb22216)
         ;
 
         
     
     
-            marker_feae9bf9162c6bbba3b3f27a0693cd65.bindTooltip(
+            marker_88aa36c632a7d8f865b571a810bacba5.bindTooltip(
                 `<div>
                      Click me!
                  </div>`,
@@ -103,34 +104,34 @@
             );
         
     
-            var marker_ca553380e01526146ce71b0eb119c98f = L.marker(
-                [33.77005, -118.193741],
+            var marker_d288e998f97a2222dfe8d703da8ad2da = L.marker(
+                [45.0, 45.0],
                 {}
-            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+            ).addTo(map_f5dbc81dd857013aecd62fbe8ccde8e0);
         
     
-            var icon_8669679950a8abe6aef038d308fceedb = L.AwesomeMarkers.icon(
+            var icon_119e1738e5f02ef1f4f6eb8cf2de42fa = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_ca553380e01526146ce71b0eb119c98f.setIcon(icon_8669679950a8abe6aef038d308fceedb);
+            marker_d288e998f97a2222dfe8d703da8ad2da.setIcon(icon_119e1738e5f02ef1f4f6eb8cf2de42fa);
         
     
-        var popup_330d7237135d47b34394697f063d7760 = L.popup({"maxWidth": "100%"});
+        var popup_d24501dc2e6dc2b4256e6f91b004cce1 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_d22ef748be9ea61e9e74a64bac7bf0f1 = $(`<div id="html_d22ef748be9ea61e9e74a64bac7bf0f1" style="width: 100.0%; height: 100.0%;">Your Location (Latitude: 33.77005, Longitude:-118.193741)</div>`)[0];
-                popup_330d7237135d47b34394697f063d7760.setContent(html_d22ef748be9ea61e9e74a64bac7bf0f1);
+                var html_24c278f2f544cff2b53633b012016d1c = $(`<div id="html_24c278f2f544cff2b53633b012016d1c" style="width: 100.0%; height: 100.0%;">Your Location (Latitude: 45.0, Longitude:45.0)</div>`)[0];
+                popup_d24501dc2e6dc2b4256e6f91b004cce1.setContent(html_24c278f2f544cff2b53633b012016d1c);
             
         
 
-        marker_ca553380e01526146ce71b0eb119c98f.bindPopup(popup_330d7237135d47b34394697f063d7760)
+        marker_d288e998f97a2222dfe8d703da8ad2da.bindPopup(popup_d24501dc2e6dc2b4256e6f91b004cce1)
         ;
 
         
     
     
-            marker_ca553380e01526146ce71b0eb119c98f.bindTooltip(
+            marker_d288e998f97a2222dfe8d703da8ad2da.bindTooltip(
                 `<div>
                      Click me!
                  </div>`,
@@ -138,10 +139,60 @@
             );
         
     
-            var poly_line_33c3bf7a976485678fc2748c8b9222d3 = L.polyline(
-                [[37.8245, -8.3965], [33.77005, -118.193741]],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_4c0a03144ff3f970a657ea577085fd75);
+            var marker_472414db44c5b7e859aa39e9122c7d42 = L.marker(
+                [6.17625, 10.17585],
+                {}
+            ).addTo(map_f5dbc81dd857013aecd62fbe8ccde8e0);
         
+    
+            var icon_5e0ecac9f4fed09d8db7882f7b710bd6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_472414db44c5b7e859aa39e9122c7d42.setIcon(icon_5e0ecac9f4fed09d8db7882f7b710bd6);
+        
+    
+        var popup_326bd1c74d0765fdc25c64afa7b35a53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd23f49cc373af68939cb8e6e2362f48 = $(`<div id="html_bd23f49cc373af68939cb8e6e2362f48" style="width: 100.0%; height: 100.0%;">(6.17625, 10.17585) is the midpoint between your position and the hover position of the ISS.</div>`)[0];
+                popup_326bd1c74d0765fdc25c64afa7b35a53.setContent(html_bd23f49cc373af68939cb8e6e2362f48);
+            
+        
+
+        marker_472414db44c5b7e859aa39e9122c7d42.bindPopup(popup_326bd1c74d0765fdc25c64afa7b35a53)
+        ;
+
+        
+    
+    
+            marker_472414db44c5b7e859aa39e9122c7d42.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5aa128549f195a52ae77e56f284a424b = L.polyline(
+                [[45.0, 45.0], [6.17625, 10.17585], [-32.6475, -24.6483]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 6}
+            ).addTo(map_f5dbc81dd857013aecd62fbe8ccde8e0);
+        
+    
+        var popup_ca641313271a175fbe11f7798adfe1e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae19946b646c0d9cb5266ffd74fd2b4f = $(`<div id="html_ae19946b646c0d9cb5266ffd74fd2b4f" style="width: 100.0%; height: 100.0%;">The distance between the ISS and your position is 11103.83 KM.</div>`)[0];
+                popup_ca641313271a175fbe11f7798adfe1e0.setContent(html_ae19946b646c0d9cb5266ffd74fd2b4f);
+            
+        
+
+        poly_line_5aa128549f195a52ae77e56f284a424b.bindPopup(popup_ca641313271a175fbe11f7798adfe1e0)
+        ;
+
+        
+    
 </script>
 </html>

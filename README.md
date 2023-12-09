@@ -1,15 +1,29 @@
-<h1>ISS Location Map</h1>
+# ISS Location Map
 
-This program generates an interactive map displaying the current location of the International Space Station (ISS) and a user's specified location. The map is created using Folium, a Python library for interactive mapping. I added the html file that is generated once the program has been ran. The program also prompts the user to enter their own coordinates to show the distance between the station and their location. The prompt includes a website where they can acquire their exact coordinates. 
+This program generates an interactive map displaying the current location of the International Space Station (ISS) and a user's specified location. The map is created using Folium, a Python library for interactive mapping. I added the html file that is generated once the program has been run. The program also prompts the user to enter their coordinates to show the distance between the station and their location. The prompt includes a website where they can acquire their exact coordinates.
 
-<h2>Prerequisites</h2>
+## Prerequisites
 
-  Before running the program, ensure you have the following dependencies installed:
-  
-  - Python
-  - Folium library
+Before running the program, ensure you have the following dependencies installed:
+
+- Python
+- Folium library
+- Requests library
+- Webbrowser library
+- Geopy library
+
+To install the required dependencies, you can use the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## How to run
+
+- git clone https://github.com/your-username/iss-location-map.git
+- cd iss-location-map
+- pip install -r requirements.txt
+- python iss_tracker.py
 
 
-<h2>Configuration</h2>
 
-  - You can customize the program by modifying the coordinates in the code to represent different locations.
