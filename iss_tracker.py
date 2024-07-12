@@ -52,10 +52,6 @@ def main():
     user_position = user_latitude, user_longitude = get_user_position()
     iss_position = iss_latitude, iss_longitude = get_iss_position()
 
-    # Calculation the midpoint and the distance between the two in KM
-    mid_point_position = find_mid_point(
-        user_latitude, user_longitude, iss_latitude, iss_longitude
-    )
     iss_user_distance_kilometer = round(
         (distance.distance(user_position, iss_position).km), 2
     )
@@ -70,14 +66,10 @@ def main():
     )
 
     print(
-        f"The midpoint between the ISS's hover position and your position is: {mid_point_position}\n"
-    )
-
-    print(
         f"The distance between you and the ISS's hover position is {iss_user_distance_kilometer} KM."
     )
     # Creating the map
-    m = folium.Map(location=(mid_point_position), control_scale=False, zoom_start=3)
+    m = folium.Map(location=user_position, control_scale=False, zoom_start=3)
 
     # Adding the ISS' position marker to the map
     folium.Marker(
@@ -95,17 +87,9 @@ def main():
         icon=folium.Icon(color="blue"),
     ).add_to(m)
 
-    # Creates the marker between the two points
-    folium.Marker(
-        location=mid_point_position,
-        tooltip="Click me!",
-        popup=f"{mid_point_position} is the midpoint between your position and the hover position of the ISS.",
-        icon=folium.Icon(color="purple"),
-    ).add_to(m)
-
     # Creating a line between all 3 positions
     folium.PolyLine(
-        locations=((user_position), (mid_point_position), (iss_position)),
+        locations=((user_position), (iss_position)),
         color="green",
         weight=6,
         popup=f"The distance between the ISS and your position is {iss_user_distance_kilometer} KM.",
