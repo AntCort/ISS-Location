@@ -1,1 +1,5 @@
 iss_location.html
+
+
+# Ignore Python __pycache__ files
+__pycache__/

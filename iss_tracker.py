@@ -1,6 +1,7 @@
 import folium
 import requests
 import webbrowser
+from citycoordinates import city_coords
 
 from geopy import distance
 
@@ -15,35 +16,36 @@ def get_iss_position():
     return iss_latitude, iss_longitude
 
 
-# Function created to prompt the user for the Longitude and
-# Latitude of their position. I also provided a website where they can
-# acquire their coordinates
+# Function created to prompt the user for the city they live in. Incase the city
+# is not listed, the program will prompt the user for the Longitude and Latitude of their position.
+# I also provided a website where they can acquire their coordinates
 def get_user_position():
     print(
         "Welcome to the ISS tracker! Let us begin by acquiring your coordinates.",
         "If you don't know your coordinates, please visit this website: https://www.latlong.net/ \n",
     )
     while True:
+        # First checks if their city is in the citycoords dictionary
+        user_city = input("What city are you currently in? ").title()
+
+        if user_city in city_coords:
+            x, y = city_coords[user_city]
+            user_latitude = x
+            user_longitude = y
+            return user_latitude, user_longitude
+        else:
+            print(
+                "The city typed may not be listed. If it's not listed, you'll need to manually enter your coordinates."
+            )
+
         try:
             user_latitude = float(input("What is your latitude? \n"))
-            break
-        except ValueError:
-            print("Invalid input. Please enter a valid numerical value for latitude.")
-    while True:
-        try:
             user_longitude = float(input("What is your longitude? \n"))
-            break
+            return user_latitude, user_longitude
         except ValueError:
-            print("Invalid input. Please enter a valid numerical value for longitude.")
-    print("\n")
-    return user_latitude, user_longitude
-
-
-# Place a midpoint between user's position and the ISS' hover position
-def find_mid_point(x1, y1, x2, y2):
-    x = round(((x1 + x2) / 2), 6)
-    y = round(((y1 + y2) / 2), 6)
-    return x, y
+            print(
+                "Invalid input. Please enter valid numerical values for both latitude and longitude."
+            )
 
 
 # 'main' function created
@@ -87,7 +89,7 @@ def main():
         icon=folium.Icon(color="blue"),
     ).add_to(m)
 
-    # Creating a line between all 3 positions
+    # Creating a line between both positions
     folium.PolyLine(
         locations=((user_position), (iss_position)),
         color="green",

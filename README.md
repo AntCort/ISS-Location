@@ -26,4 +26,10 @@ pip install -r requirements.txt
 - python iss_tracker.py
 
 
+## Bugs and Future Plans
+
+- Fix Duplicate City Names: Currently, the program does not handle multiple cities with the same name. I plan to fix this by including the state in the city lookup to ensure accurate identification.
+- User Choice for Coordinates Input: I will add a feature allowing users to choose whether they want to enter their coordinates directly or specify their city and state.
+
+
 
