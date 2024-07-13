@@ -4,13 +4,18 @@ import csv
 # to help get the users coordinates
 city_coords = {}
 
-file = "worldcities.csv"
+file = "uscities.csv"
 with open(file, "r", newline="", encoding="utf-8") as data:
     reader = csv.reader(data)
-    next(reader)  # Skip header row if exists
+    next(reader)
 
     for row in reader:
-        city = row[0]  # First column is city
-        lat = float(row[1])  # Second column is latitude
-        long = float(row[2])  # Third column is longitude
-        city_coords[city] = (lat, long)
+        state = row[0]
+        city = row[1]
+        lat = float(row[2])
+        long = float(row[3])
+        
+        if state not in city_coords:
+            city_coords[state] = {}
+        
+        city_coords[state][city] = (lat, long)

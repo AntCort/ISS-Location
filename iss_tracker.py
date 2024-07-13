@@ -24,28 +24,28 @@ def get_user_position():
         "Welcome to the ISS tracker! Let us begin by acquiring your coordinates.",
         "If you don't know your coordinates, please visit this website: https://www.latlong.net/ \n",
     )
+    
     while True:
-        # First checks if their city is in the citycoords dictionary
-        user_city = input("What city are you currently in? ").title()
-
-        if user_city in city_coords:
-            x, y = city_coords[user_city]
-            user_latitude = x
-            user_longitude = y
-            return user_latitude, user_longitude
-        else:
-            print(
-                "The city typed may not be listed. If it's not listed, you'll need to manually enter your coordinates."
-            )
-
         try:
+            user_state = input("Enter your state: ").title()
+            user_city = input("Enter your city: ").title()
+
+            if user_state in city_coords and user_city in city_coords[user_state]:
+                user_latitude, user_longitude = city_coords[user_state][user_city]
+                print(f"Coordinates for {user_city}, {user_state} found: Latitude: {user_latitude}, Longitude: {user_longitude}")
+                return user_latitude, user_longitude
+            else:
+                print(
+                    "The city or state typed may not be listed. If it's not listed, you'll need to manually enter your coordinates."
+                )
+
+            # Prompt the user to enter coordinates manually if city/state not in city_coords
             user_latitude = float(input("What is your latitude? \n"))
             user_longitude = float(input("What is your longitude? \n"))
             return user_latitude, user_longitude
         except ValueError:
-            print(
-                "Invalid input. Please enter valid numerical values for both latitude and longitude."
-            )
+            print("Invalid input. Please enter valid numerical values for both latitude and longitude.")
+
 
 
 # 'main' function created
