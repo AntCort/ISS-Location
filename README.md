@@ -24,12 +24,15 @@ pip install -r requirements.txt
 - cd iss-location-map
 - pip install -r requirements.txt
 - python iss_tracker.py
+- click on the icons on the map for more information
 
 
-## Bugs and Future Plans
+## Future Plans
 
-- Fix Duplicate City Names: Currently, the program does not handle multiple cities with the same name. I plan to fix this by including the state in the city lookup to ensure accurate identification.
-- User Choice for Coordinates Input: I will add a feature allowing users to choose whether they want to enter their coordinates directly or specify their city and state.
+- Add ISS speed information
+- Add direction or heading
+- Refresh the map automatically
+- Improve map display and tracking details
 
 
 
